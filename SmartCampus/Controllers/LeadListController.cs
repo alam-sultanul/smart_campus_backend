@@ -29,7 +29,7 @@ namespace SmartCampus.Controllers
 
             string query = @"
                              select ProfileId,ProfileName,OriginType,EmailAddress,ContactNumber,
-                             Nationality,LeadScoring,LeadStatus,ProfileType,convert(varchar(10),RegistrationDate,120) as RegistrationDate from LeadListProfiles";
+                             Nationality,LeadScoring,LeadStatus,ProfileType,convert(varchar(10),RegistrationDate,120) as RegistrationDate from LeadListProfile";
 
             DataTable table = new DataTable();
 
@@ -60,12 +60,13 @@ namespace SmartCampus.Controllers
         [HttpPost]
         public JsonResult Post(LeadListProfiles llp)
         {
-            string query = @"INSERT INTO LeadListProfiles (ProfileName,OriginType,EmailAddress,ContactNumber,LeadScoring,ProfileType,RegistrationDate,Nationality) VALUES ('" +
+            string query = @"INSERT INTO LeadListProfile (ProfileName,OriginType,EmailAddress,ContactNumber,LeadScoring,LeadStatus,ProfileType,RegistrationDate,Nationality) VALUES ('" +
                llp.ProfileName + "','" +
                 llp.OriginType + "','" +
                 llp.EmailAddress + "','" +
                 llp.ContactNumber + "','" +
                 llp.LeadScoring + "','" +
+                llp.LeadStatus + "','" +
                 llp.ProfileType + "','" +
                 llp.RegistrationDate + "','" +
                 llp.Nationality + "')";
@@ -101,13 +102,14 @@ namespace SmartCampus.Controllers
         public JsonResult Put(LeadListProfiles llp)
         {
 
-            string query = @"UPDATE LeadListProfiles SET 
+            string query = @"UPDATE LeadListProfile SET 
                                  ProfileName =  '" + llp.ProfileName +
                               "',OriginType =  '" + llp.OriginType +
                               "',EmailAddress =  '" + llp.EmailAddress +
                               "',ContactNumber =  '" + llp.ContactNumber +
                               "',ProfileType =  '" + llp.ProfileType +
                               "',LeadScoring =  '" + llp.LeadScoring +
+                              "',LeadStatus =  '" + llp.LeadStatus +
                               "',RegistrationDate =  '" + llp.RegistrationDate +
                               "',Nationality =  '" + llp.Nationality +
 
@@ -142,7 +144,7 @@ namespace SmartCampus.Controllers
         [HttpDelete("{id}")]
         public JsonResult Delete(int id)
         {
-            string query = "DELETE FROM LeadListProfiles WHERE ProfileId='" + id + "'";
+            string query = "DELETE FROM LeadListProfile WHERE ProfileId='" + id + "'";
 
             DataTable table = new DataTable();
 

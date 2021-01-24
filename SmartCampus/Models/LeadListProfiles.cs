@@ -14,7 +14,7 @@ namespace SmartCampus.Models
         public double ContactNumber { get; set; }
         public string Nationality { get; set; }
         public string LeadScoring { get; set; }
-        public int LeadStatus { get; set; }
+        public string LeadStatus { get; set; }
         public string ProfileType { get; set; }
         public DateTime RegistrationDate { get; set; }
 
