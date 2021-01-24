@@ -156,5 +156,17 @@
       } ]
     }
   },
-  "components" : { }
+  "components" : {
+    "schemas" : {
+      "Schema" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      }
+    }
+  }
 }
