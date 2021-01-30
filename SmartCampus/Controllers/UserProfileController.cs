@@ -29,7 +29,7 @@ namespace SmartCampus.Controllers
 
             return new
             {
-                user.FullName,
+                user.fullName,
                 user.Email,
                 user.UserName
 

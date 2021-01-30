@@ -7,16 +7,16 @@ namespace SmartCampus.Models
 {
     public class LeadListProfiles
     {
-        public int ProfileId { get; set; }
-        public string ProfileName { get; set; }
-        public string OriginType { get; set; }
-        public string EmailAddress { get; set; }
-        public double ContactNumber { get; set; }
-        public string Nationality { get; set; }
-        public string LeadScoring { get; set; }
-        public string LeadStatus { get; set; }
-        public string ProfileType { get; set; }
-        public DateTime RegistrationDate { get; set; }
+        public int profileId { get; set; }
+        public string profileName { get; set; }
+        public string originType { get; set; }
+        public string emailAddress { get; set; }
+        public double contactNumber { get; set; }
+        public string nationality { get; set; }
+        public string leadScoring { get; set; }
+        public string leadStatus { get; set; }
+        public string profileType { get; set; }
+        public DateTime registrationDate { get; set; }
 
     }
 }

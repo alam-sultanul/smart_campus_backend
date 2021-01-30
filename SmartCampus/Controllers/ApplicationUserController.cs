@@ -37,14 +37,14 @@ namespace SmartCampus.Controllers
         {
             var applicationUser = new ApplicationUser()
             {
-                UserName = model.UserName,
-                Email = model.Email,
-                FullName = model.FullName
+                UserName = model.userName,
+                Email = model.email,
+                fullName = model.fullName
             };
 
             try
             {
-                var result = await _userManager.CreateAsync(applicationUser, model.Password);
+                var result = await _userManager.CreateAsync(applicationUser, model.password);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -61,8 +61,8 @@ namespace SmartCampus.Controllers
         //post : /api/ApplicationUser/Login
         public async Task<IActionResult> Login(LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.UserName);
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            var user = await _userManager.FindByNameAsync(model.userName);
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
             {
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {

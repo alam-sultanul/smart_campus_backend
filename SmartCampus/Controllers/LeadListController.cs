@@ -61,15 +61,15 @@ namespace SmartCampus.Controllers
         public JsonResult Post(LeadListProfiles llp)
         {
             string query = @"INSERT INTO LeadListProfile (ProfileName,OriginType,EmailAddress,ContactNumber,LeadScoring,LeadStatus,ProfileType,RegistrationDate,Nationality) VALUES ('" +
-               llp.ProfileName + "','" +
-                llp.OriginType + "','" +
-                llp.EmailAddress + "','" +
-                llp.ContactNumber + "','" +
-                llp.LeadScoring + "','" +
-                llp.LeadStatus + "','" +
-                llp.ProfileType + "','" +
-                llp.RegistrationDate + "','" +
-                llp.Nationality + "')";
+               llp.profileName + "','" +
+                llp.originType + "','" +
+                llp.emailAddress + "','" +
+                llp.contactNumber + "','" +
+                llp.leadScoring + "','" +
+                llp.leadStatus + "','" +
+                llp.profileType + "','" +
+                llp.registrationDate + "','" +
+                llp.nationality + "')";
 
             DataTable table = new DataTable();
 
@@ -103,17 +103,17 @@ namespace SmartCampus.Controllers
         {
 
             string query = @"UPDATE LeadListProfile SET 
-                                 ProfileName =  '" + llp.ProfileName +
-                              "',OriginType =  '" + llp.OriginType +
-                              "',EmailAddress =  '" + llp.EmailAddress +
-                              "',ContactNumber =  '" + llp.ContactNumber +
-                              "',ProfileType =  '" + llp.ProfileType +
-                              "',LeadScoring =  '" + llp.LeadScoring +
-                              "',LeadStatus =  '" + llp.LeadStatus +
-                              "',RegistrationDate =  '" + llp.RegistrationDate +
-                              "',Nationality =  '" + llp.Nationality +
+                                 ProfileName =  '" + llp.profileName +
+                              "',OriginType =  '" + llp.originType +
+                              "',EmailAddress =  '" + llp.emailAddress +
+                              "',ContactNumber =  '" + llp.contactNumber +
+                              "',ProfileType =  '" + llp.profileType +
+                              "',LeadScoring =  '" + llp.leadScoring +
+                              "',LeadStatus =  '" + llp.leadStatus +
+                              "',RegistrationDate =  '" + llp.registrationDate +
+                              "',Nationality =  '" + llp.nationality +
 
-                    "'  WHERE ProfileId='" + llp.ProfileId + "' ";
+                    "'  WHERE ProfileId='" + llp.profileId + "' ";
 
             DataTable table = new DataTable();
 

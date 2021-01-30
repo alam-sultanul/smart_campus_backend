@@ -10,7 +10,7 @@ namespace SmartCampus.Models
     public class ApplicationUser : IdentityUser
     {
         [Column(TypeName = "nvarchar(150)")]
-        public String FullName { get; set; }
+        public String fullName { get; set; }
 
     }
 }
